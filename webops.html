@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+
+            function call(){
+                var p = fetch("https://official-joke-api.appspot.com/random_joke");
+                p.then((value1)=>{
+                    return value1.json()
+                }).then((value2)=>{
+                    const a=value2.setup;
+                    const b=value2.punchline;
+                    const c=value2.id;
+                    const d=value2.type;
+                
+
+                    //var audio = new Audio("RICK ROLL SOUND_NEVER GONNA GIVE YOU UP-High Quality.wav");
+                    //audio.play()
+                    
+                    
+                    alert(a);
+                    alert(b)
+                 
+                })
+
+            }
+            function audio(){
+                audio1 =  document.getElementById('my_audio').play();
+                play.addEventListener('click',playmusic)
+            }
+
+
+            var id=0;
+            //play = document.getElementById('play');
+            function start(){
+                setInterval(call,10000);
+                setInterval(audio,10000)
+            }
+          
+        </script>
+    </head>
+    <body style="text-align: center;
+                 margin: 180px;
+                 background: rgb(251, 182, 63);
+                 background: radial-gradient(circle, rgb(63, 251, 63) 0%, rgb(76, 70, 252) 100%);">
+        <h1 style="color: red;">WEBOPS AND BLOCKCHAIN CLUB</h1><br><br>
+        <h2 style="color: indigo;">To recive jokes every 10 second</h2>
+        <button style="color: blueviolet; background-color: aqua;" id="play" onclick="start()">Click Here</button>
+        <audio src="RICK ROLL SOUND_NEVER GONNA GIVE YOU UP-High Quality.wav" id="my_audio"></audio>
+    </body>
+</html>
